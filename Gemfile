@@ -1,3 +1,4 @@
+ruby '2.6.5'
 source 'https://rubygems.org'
 
 gem 'rake'
@@ -14,6 +15,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'byebug'
   gem 'dotenv', '~> 2.4'
 end
 

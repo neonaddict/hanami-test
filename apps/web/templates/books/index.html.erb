@@ -1,14 +1,15 @@
-<h1>Bookshelf</h1>
 <h2>All books</h2>
 
-<div id="books">
-    <div class="book">
-        <h3>Hard to Be a God</h3>
-        <p>by <strong>Strugatsky Brothers</strong></p>
-    </div>
-
-    <div class="book">
-        <h3>1984</h3>
-        <p>by <strong>George Orwell</strong></p>
-    </div>
-</div>
+<% if books.any? %>
+  <div id="books">
+    <% books.each do |book| %>
+      <div class="book">
+        <h2><%= book.title %></h3>
+        <p>by <strong><%= book.author %></strong></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no books yet.</p>
+<% end %>
+<a href="/books/new">New Book</a>
